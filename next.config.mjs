@@ -1,4 +1,17 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images:{
+     
+        remotePatterns:[
+            {
+                protocol: 'https',
+                hostname: 'marvel-live.freetls.fastly.net',
+                port: "",
+                pathname: '/**',
+               
+            }
+        ]
+    }
+};
 
 export default nextConfig;
