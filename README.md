@@ -10,3 +10,4 @@
 6. TypeScript: lenguaje de programacion 
 7. vscode: Editor con configuracion en el archivo settings.json para formato de pagina , tabulados y mas.
 8. git: Control de versiones
+9. gsap: libreria de animaciones
