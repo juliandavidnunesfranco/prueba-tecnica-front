@@ -54,10 +54,8 @@ export const fetchApiByPublisher = cache(async (maxConcurrency = 5): Promise<Sup
 
                 if (validPublishers.includes(data.biography.publisher)) {
                     return data as Superhero;
-                    //const imageUrl = await fetchApiByImage(data); // Llamar a fetchApiByImage
-                    //return { ...data, imageUrl }; // Agregar imageUrl al objeto del superhéroe
                 }
-                return null; // Si no es válido, retorna null
+                return null;
             } catch (error) {
                 console.error(`Error fetching superhero ID ${id}:`, error);
                 throw new Error(`Error fetching superhero ID ${id}: ${error}`);

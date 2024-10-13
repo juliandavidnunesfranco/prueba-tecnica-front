@@ -4,12 +4,13 @@ import { useEffect, useRef, useState } from 'react';
 import Image from 'next/image';
 import { gsap } from 'gsap';
 import { Superhero } from '@/interface';
+import { starShieldFontSans } from '@/conf';
 
 interface SuperheroCarouselProps {
     superheroes: Superhero[];
 }
 
-export default function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
+export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
     const carouselRef = useRef<HTMLDivElement>(null);
     const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});
@@ -54,7 +55,7 @@ export default function SuperheroCarousel({ superheroes }: SuperheroCarouselProp
             animateSlide(0);
 
             // Start the automatic rotation
-            const interval = setInterval(nextSlide, 6000); // Change slide every 5 seconds
+            const interval = setInterval(nextSlide, 6000); // Change slide every 6 seconds
 
             return () => clearInterval(interval);
         }
@@ -81,10 +82,10 @@ export default function SuperheroCarousel({ superheroes }: SuperheroCarouselProp
                             ref={(el) => {
                                 slideRefs.current[index] = el;
                             }}
-                            className="absolute inset-0 h-full w-full flex items-center justify-center p-8 transition-transform duration-500 transform hover:scale-105"
+                            className="absolute inset-0 h-full w-full flex items-center px-4 justify-center transition-transform duration-500 transform"
                         >
                             <div
-                                className="carousel-container relative overflow-hidden rounded-3xl shadow-2xl shadow-amber-400 transition-shadow duration-300 hover:shadow-3xl"
+                                className="carousel-container relative overflow-hidden rounded-3xl shadow-2xl shadow-amber-400 transition-shadow duration-300 "
                                 style={{
                                     maxWidth: '100%',
                                     maxHeight: '80vh',
@@ -102,10 +103,18 @@ export default function SuperheroCarousel({ superheroes }: SuperheroCarouselProp
                                 )}
                                 <div className="absolute inset-0 bg-gradient-to-b from-slate-200 to-transparent opacity-50 transition-opacity duration-500 hover:opacity-100" />
                                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center w-full px-4">
-                                    <h2 className="superhero-title text-4xl font-bold text-white md:text-6xl lg:text-7xl mb-2 transition-transform duration-500 transform hover:translate-y-2">
+                                    <h2
+                                        className={`superhero-title ${starShieldFontSans.className} antialiased text-4xl text-slate-200 font-bold md:text-6xl lg:text-7xl mb-2 transition-transform duration-500 transform hover:translate-y-2`}
+                                        style={{
+                                            textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)',
+                                        }}
+                                    >
                                         {hero.name}
                                     </h2>
-                                    <p className="text-xl text-white transition-transform duration-500 transform hover:translate-y-1">
+                                    <p
+                                        className="text-xl text-white transition-transform duration-500 transform hover:translate-y-1"
+                                        style={{ textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)' }}
+                                    >
                                         {hero.biography.publisher}
                                     </p>
                                 </div>

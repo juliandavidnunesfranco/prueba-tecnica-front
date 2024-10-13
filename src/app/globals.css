@@ -67,7 +67,12 @@
     @media (max-width: 640px) {
         /* Pantallas pequeñas */
         .carousel-container {
-            width: 80%; /* Ocupa el 100% del ancho */
+            width: 100%;
+        }
+        .video-container,
+        .carousel-container {
+            margin: 0;
+            padding: 0;
         }
     }
 
