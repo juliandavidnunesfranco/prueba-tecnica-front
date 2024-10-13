@@ -72,10 +72,7 @@ export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
                     <div className="animate-spin rounded-full h-32 w-32 border-t-2 border-b-2 border-gray-900"></div>
                 </div>
             ) : (
-                <div
-                    className="relative h-screen w-full overflow-hidden bg-gradient-to-t from-indigo-700 to-transparent"
-                    ref={carouselRef}
-                >
+                <div className="h-screen w-full overflow-hidden " ref={carouselRef}>
                     {superheroes.map((hero, index) => (
                         <div
                             key={hero.id}
@@ -85,7 +82,7 @@ export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
                             className="absolute inset-0 h-full w-full flex items-center px-4 justify-center transition-transform duration-500 transform"
                         >
                             <div
-                                className="carousel-container relative overflow-hidden rounded-3xl shadow-2xl shadow-amber-400 transition-shadow duration-300 "
+                                className="carousel-container relative overflow-hidden rounded-3xl shadow-2xl shadow-red-500 dark:shadow-amber-400 transition-shadow duration-300 "
                                 style={{
                                     maxWidth: '100%',
                                     maxHeight: '80vh',
@@ -104,7 +101,7 @@ export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
                                 <div className="absolute inset-0 bg-gradient-to-b from-slate-200 to-transparent opacity-50 transition-opacity duration-500 hover:opacity-100" />
                                 <div className="absolute bottom-8 left-1/2 -translate-x-1/2 text-center w-full px-4">
                                     <h2
-                                        className={`superhero-title ${starShieldFontSans.className} antialiased text-4xl text-slate-200 font-bold md:text-6xl lg:text-7xl mb-2 transition-transform duration-500 transform hover:translate-y-2`}
+                                        className={`superhero-title ${starShieldFontSans.className} antialiased text-6xl text-slate-200 font-bold  mb-2 transition-transform duration-500 transform hover:translate-y-2`}
                                         style={{
                                             textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)',
                                         }}
@@ -112,7 +109,7 @@ export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
                                         {hero.name}
                                     </h2>
                                     <p
-                                        className="text-xl text-white transition-transform duration-500 transform hover:translate-y-1"
+                                        className="text-2xl text-white transition-transform duration-500 transform hover:translate-y-1"
                                         style={{ textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)' }}
                                     >
                                         {hero.biography.publisher}

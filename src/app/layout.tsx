@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ThemeProvider } from '@/components';
+import { ThemeProvider, Navbar } from '@/components';
 import './globals.css';
 import { oswald } from '@/conf';
 
@@ -15,13 +15,15 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${oswald.className} from-accent-foreground antialiased`}>
+            <body className={`${oswald.className}  antialiased`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
                     enableSystem
                     disableTransitionOnChange
                 >
+                    <Navbar />
+
                     {children}
                 </ThemeProvider>
             </body>
