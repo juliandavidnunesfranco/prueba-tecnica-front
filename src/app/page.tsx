@@ -18,12 +18,10 @@ export default async function Home({ params }: { params: { id: string } }) {
     if (!superheroes) notFound();
     return (
         <main className="w-full h-screen flex flex-col">
-            <section className="relative hidden md:flex flex-1">
+            <section className="relative hidden md:flex flex-1 ">
                 <MarvelVideo />
             </section>
-            <section className="relative hidden md:flex flex-1">
-                <MarvelVideo />
-            </section>
+
             <section className="relative flex md:hidden flex-1">
                 <SuperheroCarousel superheroes={superheroes} />
             </section>

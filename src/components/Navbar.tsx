@@ -32,7 +32,9 @@ export const Navbar = () => {
                     <SuperheroTitle />
                 </Link>
                 <div>
-                    <div className={`items-center gap-4 hidden md:flex ${comic_neue.className} text-xl font-semibold`}>
+                    <div
+                        className={`items-center gap-4 hidden lg:flex ${comic_neue.className} text-xl font-semibold`}
+                    >
                         <Link href={'/heroes'}>Heroes Anteriores</Link>
                         <Link href={'/how'}>¿Còmo Funciona?</Link>
                         <Link href={'/login'}>Iniciar Sesión</Link>
