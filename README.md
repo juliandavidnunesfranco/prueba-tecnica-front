@@ -6,4 +6,7 @@
 3. Zustand: Estados globales y locales
 4. yarn: Administrador de paquetes para node
 5. Nodejs: version 20.18.0
-6. TypeScript: lenguaje de programacion
+6. TypeScript: lenguaje de programacion 
+7. vscode: Editor con configuracion en el archivo settings.json para formato de pagina , tabulados y mas.
+8. git: Control de versiones
+9. gsap: libreria de animaciones
