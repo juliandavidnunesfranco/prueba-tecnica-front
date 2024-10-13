@@ -4,6 +4,10 @@ import { gsap } from 'gsap';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
 import { SuperheroTitle } from '@/components';
 
+gsap.registerPlugin(useMediaQuery);
+
+const url = process.env.NEXT_PUBLIC_VIDEO_URL || '';
+
 export function MarvelVideo() {
     const videoRef = useRef<HTMLVideoElement>(null);
     const titleRef = useRef<HTMLDivElement>(null);
@@ -49,10 +53,7 @@ export function MarvelVideo() {
                     preload="auto"
                     loop
                 >
-                    <source
-                        src="https://res.cloudinary.com/ddlcmyrof/video/upload/v1728773196/Marvel_Opening_Theme_rjg2v9.mp4"
-                        type="video/mp4"
-                    />
+                    <source src={url} type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
             ) : (

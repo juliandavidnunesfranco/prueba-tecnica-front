@@ -1,6 +1,9 @@
 import { Superhero } from '@/interface';
 import { cache } from 'react';
 
+const token = process.env.TOKEN_API || '';
+const api = process.env.SUPERHEROAPI_BASE_URL || '';
+
 export async function fetchApi(url: string) {
     const response = await fetch(url);
     const data = await response.json();
@@ -8,9 +11,6 @@ export async function fetchApi(url: string) {
 }
 
 export async function fetchApiWithParams(params: string) {
-    const token = process.env.TOKEN_API || '';
-    const api = process.env.SUPERHEROAPI_BASE_URL || '';
-
     const apiBaseUrl = `${api}${token}`;
 
     const url = `${apiBaseUrl}/search/`;
@@ -20,8 +20,6 @@ export async function fetchApiWithParams(params: string) {
 }
 
 export async function fetchApiByImage(hero: Superhero): Promise<string> {
-    const token = process.env.TOKEN_API || '';
-    const api = process.env.SUPERHEROAPI_BASE_URL || '';
     const url = `${api}${token}/${hero.id}/image`;
 
     try {
@@ -38,8 +36,6 @@ export async function fetchApiByImage(hero: Superhero): Promise<string> {
 }
 
 export const fetchApiByPublisher = cache(async (maxConcurrency = 5): Promise<Superhero[]> => {
-    const token = process.env.TOKEN_API || '';
-    const api = process.env.SUPERHEROAPI_BASE_URL || '';
     const validPublishers = ['Marvel Comics', 'DC Comics'];
     const maxSuperheroId = 731;
     const ids = Array.from({ length: maxSuperheroId }, (_, i) => i + 1);
