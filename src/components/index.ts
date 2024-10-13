@@ -1,7 +1,7 @@
-import { SuperheroTitle } from './SuperHero-Title';
-import { SuperheroCarousel } from './SuperHero-Carousel';
-import { ModeToggle } from './ModeToggle';
-import { ThemeProvider } from './theme-provider';
 import { MarvelVideo } from './Marvel-Video';
-
-export { SuperheroTitle, SuperheroCarousel, ModeToggle, ThemeProvider, MarvelVideo };
+import { ModeToggle } from './ModeToggle';
+import { Navbar } from './Navbar';
+import { SuperheroCarousel } from './SuperHero-Carousel';
+import { SuperheroTitle } from './SuperHero-Title';
+import { ThemeProvider } from './theme-provider';
+export { SuperheroTitle, SuperheroCarousel, ModeToggle, ThemeProvider, MarvelVideo, Navbar };
