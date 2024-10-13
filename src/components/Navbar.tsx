@@ -28,11 +28,17 @@ export const Navbar = () => {
                 />
             )}
             <nav className="fixed top-0 left-0 px-10  flex flex-row justify-between items-center w-full h-20 bg-transparent z-30 ">
-                <Link href={'/'} className="hidden md:flex flex-1">
+                <div
+                    onClick={openMenu}
+                    className="hidden md:flex flex-1 cursor-pointer"
+                    aria-hidden
+                >
                     <SuperheroTitle />
-                </Link>
+                </div>
                 <div>
-                    <div className={`items-center gap-4 hidden md:flex ${comic_neue.className} text-xl font-semibold`}>
+                    <div
+                        className={`items-center gap-4 hidden lg:flex ${comic_neue.className} text-xl font-semibold`}
+                    >
                         <Link href={'/heroes'}>Heroes Anteriores</Link>
                         <Link href={'/how'}>¿Còmo Funciona?</Link>
                         <Link href={'/login'}>Iniciar Sesión</Link>
@@ -54,7 +60,7 @@ export const Navbar = () => {
                     </Button>
                 </div>
                 {isMenuOpen && (
-                    <div className="absolute top-16 left-10 bg-white text-black shadow-lg rounded-md p-4 z-10 md:hidden">
+                    <div className="absolute top-16 left-10 bg-white text-black shadow-lg rounded-md p-4 z-10 ">
                         <Link href={'/heroes'} className="block mb-2">
                             Heroes Anteriores
                         </Link>
