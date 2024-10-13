@@ -21,9 +21,6 @@ export default async function Home({ params }: { params: { id: string } }) {
             <section className="relative hidden md:flex flex-1">
                 <MarvelVideo />
             </section>
-            <section className="relative hidden md:flex flex-1">
-                <MarvelVideo />
-            </section>
             <section className="relative flex md:hidden flex-1">
                 <SuperheroCarousel superheroes={superheroes} />
             </section>
