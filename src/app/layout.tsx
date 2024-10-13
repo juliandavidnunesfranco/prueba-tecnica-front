@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { ThemeProvider, ModeToggle } from '@/components';
+import { ThemeProvider } from '@/components';
 import './globals.css';
 import { oswald } from '@/conf';
 
@@ -23,7 +23,6 @@ export default function RootLayout({
                     disableTransitionOnChange
                 >
                     {children}
-                    <ModeToggle />
                 </ThemeProvider>
             </body>
         </html>
