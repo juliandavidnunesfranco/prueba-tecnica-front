@@ -1,4 +1,4 @@
-import { MarvelVideo, SuperheroCarousel } from '@/components';
+import { MarvelVideo, SuperheroCard, SuperheroCarousel } from '@/components';
 import { Superhero } from '@/interface';
 import { fetchApiByPublisher } from '@/lib/fetch';
 import { notFound } from 'next/navigation';
@@ -21,6 +21,10 @@ export default async function Home({ params }: { params: { id: string } }) {
             <section className="relative hidden md:flex flex-1">
                 <MarvelVideo />
             </section>
+            <section className="absolute top-20 left-24  flex-1">
+                <SuperheroCard />
+            </section>
+
             <section className="relative flex md:hidden flex-1">
                 <SuperheroCarousel superheroes={superheroes} />
             </section>

@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { useMediaQuery } from '@/hooks/useMediaQuery';
+import { useCardStore } from '@/store';
 
 gsap.registerPlugin(useMediaQuery);
 
@@ -18,6 +19,7 @@ export function MarvelVideo() {
     const containerRef = useRef<HTMLDivElement>(null);
     const isSmallScreen = useMediaQuery('(min-width: 641px)');
     const [currentVideoIndex, setCurrentVideoIndex] = useState<number>(0);
+    const { isMenuOpen } = useCardStore();
 
     useEffect(() => {
         if (isSmallScreen && videoRef.current) {
@@ -46,32 +48,42 @@ export function MarvelVideo() {
     useEffect(() => {
         if (videoRef.current) {
             videoRef.current.load();
-            videoRef.current.play().catch((error) => console.error('Error playing video:', error));
+            if (!isMenuOpen) {
+                videoRef.current
+                    .play()
+                    .catch((error) => console.error('Error playing video:', error));
+            }
         }
-    }, [currentVideoIndex]);
+    }, [currentVideoIndex, isMenuOpen]);
 
     return (
-        <div
-            ref={containerRef}
-            className={`w-full ${
-                isSmallScreen && 'h-[80vh]'
-            } flex items-center justify-center overflow-hidden rounded-lg shadow-2xl dark:shadow-amber-400 shadow-red-500`}
-        >
-            {isSmallScreen && (
-                <video
-                    key={videoComics[currentVideoIndex].id}
-                    ref={videoRef}
-                    className="w-full h-full object-cover "
-                    playsInline
-                    preload="auto"
-                    onEnded={() =>
-                        setCurrentVideoIndex((prevIndex) => (prevIndex + 1) % videoComics.length)
-                    }
+        <>
+            {!isMenuOpen && (
+                <div
+                    ref={containerRef}
+                    className={`w-full ${
+                        isSmallScreen && 'h-[80vh]'
+                    } flex items-center justify-center overflow-hidden rounded-lg shadow-2xl dark:shadow-amber-400 shadow-red-500`}
                 >
-                    <source src={videoComics[currentVideoIndex].url} type="video/mp4" />
-                    Your browser does not support the video tag.
-                </video>
+                    {isSmallScreen && (
+                        <video
+                            key={videoComics[currentVideoIndex].id}
+                            ref={videoRef}
+                            className="w-full h-full object-cover "
+                            playsInline
+                            preload="auto"
+                            onEnded={() =>
+                                setCurrentVideoIndex(
+                                    (prevIndex) => (prevIndex + 1) % videoComics.length
+                                )
+                            }
+                        >
+                            <source src={videoComics[currentVideoIndex].url} type="video/mp4" />
+                            Your browser does not support the video tag.
+                        </video>
+                    )}
+                </div>
             )}
-        </div>
+        </>
     );
 }

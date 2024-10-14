@@ -2,7 +2,6 @@ import { create } from 'zustand';
 
 interface State {
     isMenuOpen: boolean;
-
     openMenu: () => void;
     closeMenu: () => void;
 }
