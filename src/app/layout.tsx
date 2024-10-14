@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${oswald.className}  antialiased`}>
+            <body className={`${oswald.className}  antialiased `}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"

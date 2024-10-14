@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     images: {
-        domains: ['www.superherodb.com'],
+        formats: ['image/webp'],
         unoptimized: true,
         localPatterns: [
             {
@@ -18,7 +18,7 @@ const nextConfig = {
             },
             {
                 protocol: 'https',
-                hostname: 'www.superherodb.com',
+                hostname: 'superherodb.com',
                 port: '',
                 pathname: '/**',
             },

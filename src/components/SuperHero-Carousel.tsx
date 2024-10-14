@@ -11,7 +11,6 @@ interface SuperheroCarouselProps {
 }
 
 export function SuperheroCarousel({ superheroes }: SuperheroCarouselProps) {
-    
     const carouselRef = useRef<HTMLDivElement>(null);
     const slideRefs = useRef<(HTMLDivElement | null)[]>([]);
     const [imageErrors, setImageErrors] = useState<{ [key: string]: boolean }>({});

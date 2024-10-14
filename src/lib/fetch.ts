@@ -16,7 +16,7 @@ export async function fetchApiWithParams(params: string) {
     const url = `${apiBaseUrl}/search/`;
     const response = await fetch(`${url}${params}`);
     const data = await response.json();
-    return data;
+    return data.results;
 }
 
 export async function fetchApiByImage(hero: Superhero): Promise<string> {
