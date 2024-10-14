@@ -58,7 +58,7 @@ const config: Config = {
                 sm: 'calc(var(--radius) - 4px)',
             },
             backgroundImage: {
-                backgroundHero: "url('/assets/images/IronMan.webp')",
+                backgroundHero: "url('/assets/images/ironMan.webp')",
             },
         },
     },
