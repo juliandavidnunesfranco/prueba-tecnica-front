@@ -9,6 +9,7 @@ import {
 } from '@/components';
 import { starShieldFontSans } from '@/conf';
 import { IronmanProps, Superhero } from '@/interface';
+import { Metadata } from 'next';
 
 import { fetchApiByPublisher, fetchApiWithParams } from '@/lib/fetch';
 import { notFound } from 'next/navigation';
@@ -19,6 +20,28 @@ export async function generateStaticParams() {
         id: hero.id,
     }));
 }
+
+export const metadata: Metadata = {
+    title: 'Superhéroes',
+    description: 'Encuentra información sobre tus superhéroes favoritos',
+    openGraph: {
+        title: 'Superhéroes | Marvel',
+        description: 'Encuentra información sobre tus superhéroes favoritos',
+       
+        siteName: 'Superhéroes | Marvel',
+        locale: 'es_ES',
+        type: 'website',
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Superhéroes | Marvel',
+        description: 'Encuentra información sobre tus superhéroes favoritos',
+       
+    },
+};
+
+
+
 
 export default async function Home({ params }: { params: { id: string } }) {
     const { id } = params;

@@ -1,4 +1,4 @@
-import handlerDataJson from '@/lib/data';
+import { handlerDataJson } from '@/lib/data';
 import { NextRequest, NextResponse } from 'next/server';
 
 const heroes = ['batman', 'superman', 'spiderman', 'thor'];
