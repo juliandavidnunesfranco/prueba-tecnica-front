@@ -1,4 +1,4 @@
-import { MarvelVideo, SuperheroCard, SuperheroCarousel, VoteBanner, VoteProgressBar } from '@/components';
+import { SuperheroAnteriores } from '@/components';
 import { IronmanProps, Superhero } from '@/interface';
 import { fetchApiByPublisher, fetchApiWithParams } from '@/lib/fetch';
 import { notFound } from 'next/navigation';
@@ -27,9 +27,11 @@ export default async function Home({ params }: { params: { id: string } }) {
 
     if (!superheroes || !infoHero) notFound();
 
+    
+
     return (
         <main className="w-full h-screen flex flex-col">
-            <section className="relative hidden md:flex flex-1">
+            {/* <section className="relative hidden md:flex flex-1">
                 <MarvelVideo />
             </section>
             <SuperheroCard superhero={infoHero} />
@@ -41,6 +43,25 @@ export default async function Home({ params }: { params: { id: string } }) {
             </section>
             <section aria-label="Invitación a votar">
                 <VoteBanner />
+            </section> */}
+            <section aria-label="Votaciones anteriores">
+                <div className="container mx-auto py-8">
+                    <h2 className="text-3xl font-bold mb-8 text-center">
+                        Superhéroes Populares Votaciones Anteriores
+                    </h2>
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        {superheroes.map((hero) => (
+                            <SuperheroAnteriores
+                                key={hero.name}
+                                name={hero.name}
+                                description={hero.description}
+                                imageUrl={hero.imageUrl}
+                                likes={hero.likes}
+                                unlikes={hero.unlikes}
+                            />
+                        ))}
+                    </div>
+                </div>
             </section>
         </main>
     );

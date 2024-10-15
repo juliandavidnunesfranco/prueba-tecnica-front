@@ -74,8 +74,14 @@ export interface CounterState {
     sumar: (value: number, voteType: string) => void;
 }
 
-
-
 export interface CardVotedProps {
     voteType: 'like' | 'unlike';
+}
+
+export interface SuperheroAnterioresProps {
+    name: string;
+    description: string;
+    imageUrl: string;
+    likes: number;
+    unlikes: number;
 }
