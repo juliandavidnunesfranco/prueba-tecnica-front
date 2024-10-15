@@ -39,10 +39,10 @@ export const Navbar = () => {
                     <div
                         className={`items-center gap-4 hidden lg:flex ${comic_neue.className} text-xl dark:text-slate-200 text-gray-600 font-semibold`}
                     >
-                        <Link href={'/heroes'}>Heroes Anteriores</Link>
-                        <Link href={'/how'}>¿Còmo Funciona?</Link>
-                        <Link href={'/login'}>Iniciar Sesión</Link>
-                        <Link href={'/search'}>
+                        <Link href={'/#'}>Heroes Anteriores</Link>
+                        <Link href={'/#'}>¿Còmo Funciona?</Link>
+                        <Link href={'/#'}>Iniciar Sesión</Link>
+                        <Link href={'/#'}>
                             <Button className="m-2 p-2 rounded-md transition-all" variant={'ghost'}>
                                 <Search size={30} />
                             </Button>

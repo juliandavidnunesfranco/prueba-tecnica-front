@@ -6,7 +6,9 @@ import {
     VoteBanner,
     VoteProgressBar,
 } from '@/components';
+import { starShieldFontSans } from '@/conf';
 import { IronmanProps, Superhero } from '@/interface';
+
 import { fetchApiByPublisher, fetchApiWithParams } from '@/lib/fetch';
 import { notFound } from 'next/navigation';
 
@@ -23,10 +25,11 @@ export default async function Home({ params }: { params: { id: string } }) {
     const superheroes: Superhero[] = await fetchApiByPublisher();
     const info = await fetchApiWithParams('ironman');
 
-    const heroesToFind = ['batman', 'thor', 'spider-man', 'superman'];
+    const heroesToFind = ['wolverine', 'hulk', 'nebula', 'vision', 'captain america'];
     const superheroesAnteriores = superheroes.filter((hero) =>
         heroesToFind.includes(hero.name.toLowerCase())
     );
+
     const infoHero: IronmanProps = {
         hero: info[0]?.name || '',
         fullName: info[0]?.biography['full-name'] || '',
@@ -55,10 +58,13 @@ export default async function Home({ params }: { params: { id: string } }) {
             </section>
             <section aria-label="Votaciones anteriores">
                 <div className="container mx-auto py-8">
-                    <h2 className="text-3xl font-bold mb-8 text-center">
+                    <h2
+                        className={`text-center text-4xl md:text-5xl lg:text-6xl font-extrabold text-slate-200 ${starShieldFontSans.className} antialiased mb-3`}
+                        style={{ textShadow: '2px 2px 6px rgba(0, 0, 0, 0.7)' }}
+                    >
                         Superhéroes Populares Votaciones Anteriores
                     </h2>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2  gap-6">
                         {superheroesAnteriores.map((hero) => (
                             <SuperheroAnteriores
                                 key={hero.name}
