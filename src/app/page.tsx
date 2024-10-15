@@ -1,6 +1,5 @@
-import { MarvelVideo, SuperheroCard, SuperheroCarousel } from '@/components';
-import { IronmanProps } from '@/components/SuperHero-Card';
-import { Superhero } from '@/interface';
+import { MarvelVideo, SuperheroCard, SuperheroCarousel, VoteBanner, VoteProgressBar } from '@/components';
+import { IronmanProps, Superhero } from '@/interface';
 import { fetchApiByPublisher, fetchApiWithParams } from '@/lib/fetch';
 import { notFound } from 'next/navigation';
 
@@ -33,12 +32,15 @@ export default async function Home({ params }: { params: { id: string } }) {
             <section className="relative hidden md:flex flex-1">
                 <MarvelVideo />
             </section>
-
-            <div className="">
-                <SuperheroCard superhero={infoHero} />
-            </div>
+            <SuperheroCard superhero={infoHero} />
             <section className="relative flex md:hidden flex-1">
                 <SuperheroCarousel superheroes={superheroes} />
+            </section>
+            <section aria-label="Progreso de la votación">
+                <VoteProgressBar />
+            </section>
+            <section aria-label="Invitación a votar">
+                <VoteBanner />
             </section>
         </main>
     );

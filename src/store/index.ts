@@ -1,4 +1,4 @@
 import { useCardStore } from './ui/ui-card';
 import { useUIStore } from './ui/ui-store';
-
-export { useUIStore, useCardStore };
+import { useCounterStore } from './counter/counter-store';
+export { useUIStore, useCardStore, useCounterStore };

@@ -58,3 +58,24 @@ export interface ApiResponse {
     'results-for': string;
     results: Superhero[];
 }
+
+export interface IronmanProps {
+    hero: string;
+    fullName: string;
+    placeOfBirth: string;
+    firstAppearance: string;
+    publisher: string;
+    alignment: string;
+}
+
+export interface CounterState {
+    like: number;
+    unlike: number;
+    sumar: (value: number, voteType: string) => void;
+}
+
+
+
+export interface CardVotedProps {
+    voteType: 'like' | 'unlike';
+}

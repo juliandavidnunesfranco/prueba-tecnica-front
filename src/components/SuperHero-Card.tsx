@@ -1,6 +1,5 @@
 'use client';
-
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useCardStore } from '@/store';
 import { Button } from '@/components/ui/button';
 import {
@@ -14,33 +13,58 @@ import {
 } from '@/components/ui/dialog';
 import { ThumbsUp, ThumbsDown } from 'lucide-react';
 import { anton, starShieldFontSans } from '@/conf';
-
-export interface IronmanProps {
-    hero: string;
-    fullName: string;
-    placeOfBirth: string;
-    firstAppearance: string;
-    publisher: string;
-    alignment: string;
-}
+import { IronmanProps } from '@/interface';
+import { useCounterStore } from '@/store';
+import { CardVoted } from './CardVoted';
 
 export function SuperheroCard({ superhero }: { superhero: IronmanProps }) {
-    const { isMenuOpen, closeMenu, openMenu } = useCardStore();
+    const { isMenuOpen, closeMenu, openMenu, openCard } = useCardStore();
+    const { like, unlike, sumar } = useCounterStore();
     const { hero, fullName, placeOfBirth, firstAppearance, publisher, alignment } = superhero;
+    const [meGusta, setMeGusta] = useState<number>(0);
+    const [noMeGusta, setNoMeGusta] = useState<number>(0);
+    const [currentVoted, setCurrentVoted] = useState<'like' | 'unlike' | null>(null);
 
     useEffect(() => {
         const timer = setTimeout(() => {
             if (!isMenuOpen) {
                 openMenu();
             }
-        }, 68000);
+        }, 6);
         return () => clearTimeout(timer);
     }, []);
 
-    const handleVote = (vote: 'like' | 'unlike') => {
-        // Aquí puedes implementar la lógica para manejar los votos
-        console.log(`Voted ${vote} for ${hero}`);
-        closeMenu();
+    const viewLogs = (voteType: 'like' | 'unlike') => {
+        console.log(
+            '1-Voto desde estado global',
+            voteType === 'like' ? `${like} x Like` : `${unlike} x Unlike`
+        );
+        console.log(
+            '2-Voto desde estado local ',
+            voteType === 'like' ? `${meGusta} x Like` : `${noMeGusta} x Unlike`
+        );
+        const storage =
+            typeof window !== 'undefined' ? window.localStorage.getItem('counter-storage') : null;
+        if (storage) {
+            const { state } = JSON.parse(storage);
+            console.log(
+                '3-Voto desde LocalStorage',
+                voteType === 'like' ? `${state.like} x Like` : `${state.unlike} x Unlike`
+            );
+        }
+    };
+
+    const handleVote = (voteType: 'like' | 'unlike') => {
+         if (voteType === 'like') {
+             setMeGusta((prevMeGusta) => prevMeGusta + 1);
+         } else {
+             setNoMeGusta((prevNoMeGusta) => prevNoMeGusta + 1);
+         }
+        //voteType === 'like' ? setMeGusta(meGusta + 1) : setNoMeGusta(noMeGusta + 1)
+        sumar(1, voteType);
+        setCurrentVoted(voteType);
+        openCard();
+        viewLogs(voteType);
     };
 
     return (
@@ -89,6 +113,7 @@ export function SuperheroCard({ superhero }: { superhero: IronmanProps }) {
                     </DialogFooter>
                 </DialogContent>
             </Dialog>
+            {currentVoted && <CardVoted voteType={currentVoted} />}
         </div>
     );
 }
