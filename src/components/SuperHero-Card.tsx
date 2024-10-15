@@ -30,7 +30,7 @@ export function SuperheroCard({ superhero }: { superhero: IronmanProps }) {
             if (!isMenuOpen) {
                 openMenu();
             }
-        }, 6);
+        }, 60000);
         return () => clearTimeout(timer);
     }, []);
 
@@ -55,11 +55,11 @@ export function SuperheroCard({ superhero }: { superhero: IronmanProps }) {
     };
 
     const handleVote = (voteType: 'like' | 'unlike') => {
-         if (voteType === 'like') {
-             setMeGusta((prevMeGusta) => prevMeGusta + 1);
-         } else {
-             setNoMeGusta((prevNoMeGusta) => prevNoMeGusta + 1);
-         }
+        if (voteType === 'like') {
+            setMeGusta((prevMeGusta) => prevMeGusta + 1);
+        } else {
+            setNoMeGusta((prevNoMeGusta) => prevNoMeGusta + 1);
+        }
         //voteType === 'like' ? setMeGusta(meGusta + 1) : setNoMeGusta(noMeGusta + 1)
         sumar(1, voteType);
         setCurrentVoted(voteType);

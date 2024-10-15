@@ -1,0 +1,139 @@
+{
+    "response": "success",
+    "results-for": "thor",
+    "results": [
+        {
+            "id": "405",
+            "name": "Lex Luthor",
+            "powerstats": {
+                "intelligence": "100",
+                "strength": "53",
+                "speed": "25",
+                "durability": "65",
+                "power": "68",
+                "combat": "70"
+            },
+            "biography": {
+                "full-name": "Lex Luthor",
+                "alter-egos": "No alter egos found.",
+                "aliases": ["-"],
+                "place-of-birth": "-",
+                "first-appearance": "Action Comics #23",
+                "publisher": "DC Comics",
+                "alignment": "bad"
+            },
+            "appearance": {
+                "gender": "Male",
+                "race": "Human",
+                "height": ["6'2'", "188 cm"],
+                "weight": ["210 lb", "95 kg"],
+                "eye-color": "Green",
+                "hair-color": "No Hair"
+            },
+            "work": {
+                "occupation": "Owner of LexCorp",
+                "base": "-"
+            },
+            "connections": {
+                "group-affiliation": "Injustice Gang, Injustice League, Society of Supervillains",
+                "relatives": "Casey and Elaine Griggs (foster parents, deceased),\nLena Luthor (sister pre-Crisis; daughter post-Crisis),\nElizabeth Perske (ex-wife),\nPerry J. White Jr. (son, deceased),\nContessa Erica Alexandra del Portenza (wife, assumed deceased)"
+            },
+            "image": {
+                "url": "https://www.superherodb.com/pictures2/portraits/10/100/727.jpg"
+            }
+        },
+        {
+            "id": "659",
+            "name": "Thor",
+            "powerstats": {
+                "intelligence": "69",
+                "strength": "100",
+                "speed": "83",
+                "durability": "100",
+                "power": "100",
+                "combat": "100"
+            },
+            "biography": {
+                "full-name": "Thor Odinson",
+                "alter-egos": "Rune King Thor",
+                "aliases": ["Donald Blake", "Sigurd Jarlson", "Jake Olsen", "Donar the Mighty"],
+                "place-of-birth": "Asgard",
+                "first-appearance": "Journey into Mystery #83 (August, 1962)",
+                "publisher": "Rune King Thor",
+                "alignment": "good"
+            },
+            "appearance": {
+                "gender": "Male",
+                "race": "Asgardian",
+                "height": ["6'6", "198 cm"],
+                "weight": ["640 lb", "288 kg"],
+                "eye-color": "Blue",
+                "hair-color": "Blond"
+            },
+            "work": {
+                "occupation": "King of Asgard; formerly EMS Technician; Physician",
+                "base": "New York, New York"
+            },
+            "connections": {
+                "group-affiliation": "Avengers",
+                "relatives": "Odin (father), Gaea (mother), Frigga (step-mother), Loki (step-brother), Vidar (half-brother), Buri (paternal great-grandfather), Bolthorn (maternal great grandfather), Bor (grandfather), Bestla (grandmother), Vili (uncle), Ve (uncle), Sigyn (former sister-in-law), Hela (alleged niece), Jormungand (alleged nephew), Fernis Wolf (alleged nephew)"
+            },
+            "image": {
+                "url": "https://www.superherodb.com/pictures2/portraits/10/100/140.jpg"
+            }
+        },
+        {
+            "id": "660",
+            "name": "Thor Girl",
+            "powerstats": {
+                "intelligence": "75",
+                "strength": "83",
+                "speed": "70",
+                "durability": "84",
+                "power": "100",
+                "combat": "70"
+            },
+            "biography": {
+                "full-name": "Tarene",
+                "alter-egos": "No alter egos found.",
+                "aliases": [
+                    "Asgard Lass",
+                    "the Designate",
+                    "the Destroyer",
+                    "Hammerette",
+                    "Hammer Girl",
+                    "Hammer Lass",
+                    "Tara Olson",
+                    "Spirit of the Jewel",
+                    "the Supreme",
+                    "Thoreta",
+                    "Thorita",
+                    "Thor Lass"
+                ],
+                "place-of-birth": "-",
+                "first-appearance": "Thor, Volume 2, #22; (as Thor Girl) Thor, Volume 2, #33",
+                "publisher": "Marvel Comics",
+                "alignment": "good"
+            },
+            "appearance": {
+                "gender": "Female",
+                "race": "Asgardian",
+                "height": ["5'9", "175 cm"],
+                "weight": ["317 lb", "143 kg"],
+                "eye-color": "Blue",
+                "hair-color": "Blond"
+            },
+            "work": {
+                "occupation": "-",
+                "base": "Camp Hammond; FormerlyNew York City, Formerly Asgard"
+            },
+            "connections": {
+                "group-affiliation": "Ally of the Asgardians",
+                "relatives": "-"
+            },
+            "image": {
+                "url": "https://www.superherodb.com/pictures2/portraits/10/100/1296.jpg"
+            }
+        }
+    ]
+}
