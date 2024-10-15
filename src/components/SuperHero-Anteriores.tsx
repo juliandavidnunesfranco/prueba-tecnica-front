@@ -3,6 +3,7 @@ import { SuperheroAnterioresProps } from '@/interface';
 import Image from 'next/image';
 import { ThumbsUp, ThumbsDown, Info } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import { starShieldFontSans } from '@/conf';
 
 export function SuperheroAnteriores({
     name,
@@ -15,12 +16,12 @@ export function SuperheroAnteriores({
     const likePercentage = totalVotes > 0 ? Math.round((likes / totalVotes) * 100) : 50;
 
     return (
-        <div className="relative w-full h-96 rounded-lg overflow-hidden shadow-lg">
-            <Image src={imageUrl} alt={name} layout="fill" objectFit="cover" className="z-0" />
+        <div className="relative w-[80%] md:w-full mx-auto h-[80vh] rounded-2xl overflow-hidden shadow-2xl shadow-red-500 dark:shadow-amber-400 transition-shadow duration-300 ">
+            <Image src={imageUrl} alt={name} fill objectFit="cover" className="z-0" />
             <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black to-transparent p-4">
                 <div className="flex justify-between items-end">
                     <div className="text-white ml-4">
-                        <h3 className="text-xl font-bold mb-1">{name}</h3>
+                        <h3 className={`text-xl ${starShieldFontSans.className} font-bold mb-1`}>{name}</h3>
                         <p className="text-sm mb-2">{description}</p>
                     </div>
                     {likePercentage >= 50 ? (

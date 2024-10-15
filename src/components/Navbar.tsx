@@ -37,7 +37,7 @@ export const Navbar = () => {
                 </div>
                 <div>
                     <div
-                        className={`items-center gap-4 hidden lg:flex ${comic_neue.className} text-xl font-semibold`}
+                        className={`items-center gap-4 hidden lg:flex ${comic_neue.className} text-xl dark:text-slate-200 text-gray-600 font-semibold`}
                     >
                         <Link href={'/heroes'}>Heroes Anteriores</Link>
                         <Link href={'/how'}>¿Còmo Funciona?</Link>
