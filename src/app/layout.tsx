@@ -41,7 +41,7 @@ export const metadata: Metadata & { title: TemplateString } = {
         title: 'SuperHeroes',
         description:
             'Visita a tus superheroes favoritos , dales un like o mira los ultimos avances en el mundo comics, ademas de dar un me gusta al superheroe favorito',
-        url: process.env.NEXT_PUBLIC_BASE_URL || 'https://localhost:3000', // Asegúrate de usar la URL base correcta
+       // url: process.env.NEXT_PUBLIC_BASE_URL || 'https://localhost:3000', // Asegúrate de usar la URL base correcta
         siteName: 'SuperHeroes',
         images: '/favicon.png', // Ruta a una imagen representativa del sitio
         locale: 'es_CO',
