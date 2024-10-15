@@ -7,6 +7,7 @@ import { SuperheroTitle } from './SuperHero-Title';
 import { ThemeProvider } from './theme-provider';
 import { CardVoted } from './CardVoted';
 import { VoteBanner } from './VoteBanner';
+import { VoteProgressBar } from './VoteProgressBar';
 export {
     CardVoted,
     SuperheroTitle,
@@ -17,4 +18,5 @@ export {
     MarvelVideo,
     Navbar,
     VoteBanner,
+    VoteProgressBar,
 };

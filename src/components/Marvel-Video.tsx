@@ -71,6 +71,7 @@ export function MarvelVideo() {
                             ref={videoRef}
                             className="w-full h-full object-cover "
                             playsInline
+                            muted
                             preload="auto"
                             onEnded={() =>
                                 setCurrentVideoIndex(

@@ -26,14 +26,14 @@ export const CardVoted = ({ voteType }: CardVotedProps) => {
                     <DialogContent className="max-w-[80%] py-10 md:max-w-md mx-auto bg-blend-lighten rounded-xl bg-white/10">
                         <DialogHeader>
                             <DialogTitle
-                                className={`${starShieldFontSans.className} text-4xl sm:text-6xl text-center`}
+                                className={`${starShieldFontSans.className} text-4xl sm:text-6xl text-center text-slate-200`}
                             >
                                 {voteType === 'like' ? 'Me gusta' : 'No me gusta'}
                             </DialogTitle>
                             <DialogDescription
                                 className={`${anton.className} text-xl font-semibold text-center text-black`}
                             >
-                                Gracias por tu voto ha sido registrado. Puedes votar nuevamente si lo deseas.
+                                Tu voto ha sido registrado. Puedes votar nuevamente si lo deseas.
                             </DialogDescription>
                         </DialogHeader>
                         <div className="flex flex-col items-center space-y-2">
