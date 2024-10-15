@@ -15,7 +15,7 @@ export default function RootLayout({
 }>) {
     return (
         <html lang="en" suppressHydrationWarning>
-            <body className={`${oswald.className}  antialiased `}>
+            <body className={`${oswald.className}  antialiased flex flex-col min-h-screen`}>
                 <ThemeProvider
                     attribute="class"
                     defaultTheme="system"
@@ -25,6 +25,7 @@ export default function RootLayout({
                     <Navbar />
 
                     {children}
+                   
                 </ThemeProvider>
             </body>
         </html>

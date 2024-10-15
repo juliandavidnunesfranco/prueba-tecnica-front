@@ -1,4 +1,5 @@
 import {
+    Footer,
     MarvelVideo,
     SuperheroAnteriores,
     SuperheroCard,
@@ -78,6 +79,9 @@ export default async function Home({ params }: { params: { id: string } }) {
                     </div>
                 </div>
             </section>
+            <footer>
+                <Footer/>
+            </footer>
         </main>
     );
 }

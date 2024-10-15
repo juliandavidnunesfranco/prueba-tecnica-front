@@ -9,8 +9,10 @@ import { ThemeProvider } from './theme-provider';
 import { CardVoted } from './CardVoted';
 import { VoteBanner } from './VoteBanner';
 import { VoteProgressBar } from './VoteProgressBar';
+import { Footer } from './Footer';
 export {
     CardVoted,
+    Footer,
     SuperheroAnteriores,
     SuperheroTitle,
     SuperheroCarousel,
